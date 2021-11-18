@@ -1,0 +1,53 @@
+.menu_selectBtn {
+    width : 20%;
+    height : 150px;
+    justify-content: center;
+}
+
+.menu_selectBtn .menu_img {
+    width: 90px;
+    height: 90px;
+}
+
+.menu_selectBtn .menu_name{
+
+}
+
+.menu_selectBtn .menu_price{
+
+}
+
+.menu_edit {
+    justify-content: center;
+}
+
+.menu_edit .menu_img {
+    width: 90px;
+    height: 90px;
+}
+.menu_edit .menu_nameTxt{
+    border-radius: 10px;
+	width: 45%;
+	height: 80px;
+	outline: none;
+	font-size: 16px;
+}
+
+.menu_edit .menu_priceTxt{
+    border-radius: 10px;
+	width: 45%;
+	height: 80px;
+	outline: none;
+	font-size: 16px;
+}
+#menu_edit .btn {
+	border-radius: 10px;
+	width: 45%;
+	height: 80px;
+	outline: none;
+	font-size: 16px;
+    background: #e1e1e1;
+	color: #4a6363;
+	font-weight: bold;
+	border: none;
+}
