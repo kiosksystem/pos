@@ -1,0 +1,29 @@
+#main_container {
+    display: flex;
+    justify-content: center;
+}
+
+.Pos_form {
+    width : 60%;
+    height : 500px;
+    float : left;
+    border-top: 10px;
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+}
+
+.menu_left {
+    display: inline-block;
+    width : 65%;
+    height: 100%;
+    background-color: red;
+}
+
+.menu_right {
+    display: inline-block;
+    width : 35%;
+    height: 100%;
+    background-color: blue;
+    justify-content: center;
+}
