@@ -3,17 +3,15 @@
 }
 
 .Pos_form .btn_list {
-
+	margin-top:20px;
 }
 
-#btn_list .btn {
+.menu_right .btn_list .btn {
 	border-radius: 10px;
 	width: 100%;
 	height: 80px;
-	outline: none;
 	font-size: 16px;
     background: #e1e1e1;
 	color: #4a6363;
 	font-weight: bold;
-	border: none;
 }
