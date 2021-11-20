@@ -1,31 +1,32 @@
 .menu_selectBtn {
-    width : 20%;
+    width : 100px;
     height : 150px;
     justify-content: center;
 }
 
-.menu_selectBtn .menu_img {
-    width: 90px;
-    height: 90px;
+#menu_selectBtn .img {
+	width: 90px;
+	height: 90px;
+	object-fit: fill;
 }
 
-.menu_selectBtn .menu_name{
-
-}
-
-.menu_selectBtn .menu_price{
+#menu_selectBtn .menu_name{
 
 }
 
-.menu_edit {
+#menu_selectBtn .menu_price{
+
+}
+
+#menu_edit {
     justify-content: center;
 }
 
-.menu_edit .menu_img {
-    width: 90px;
-    height: 90px;
+#menu_edit .img {
+    width: 180px;
+    height: 180px;
 }
-.menu_edit .menu_nameTxt{
+#menu_edit .menu_nameTxt{
     border-radius: 10px;
 	width: 45%;
 	height: 80px;
@@ -33,7 +34,7 @@
 	font-size: 16px;
 }
 
-.menu_edit .menu_priceTxt{
+#menu_edit .menu_priceTxt{
     border-radius: 10px;
 	width: 45%;
 	height: 80px;
