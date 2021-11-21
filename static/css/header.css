@@ -5,7 +5,7 @@
 
 #header_form_container {
     width: 65%;
-    min-width: 600px;
+    min-width: 800px;
 }
 
 #header_form_container #header_form {
@@ -14,10 +14,19 @@
     border: 3px solid black;
 }
 
-#header_form .home_btn {
-    margin: 10px;
-    width: 80px;
-    height: 80px;
+#header_form .left_headerMenu {
+    float: left;
+    width: 70%;
+}
+
+.left_headerMenu .home_btn {
+    /*width: 80px;
+    height: 80px;*/
+    margin-top: 10px;
+    margin-left: 10px;
+    float: left;
+    width: 20%;
+    min-width: 80px;
 }
 
 .home_btn .home_img {
@@ -25,11 +34,40 @@
     height: 80px;
 }
 
-#header_form .now_times {
+.left_headerMenu .now_times {
+    float: left;
+    width: 65%;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-right: 10px;
     padding: 5px;
     font-size: 20px;
     border: 3px solid black;
+}
+
+#header_form .right_headerMenu {
+    width: 30%;
+}
+
+.right_headerMenu .home_btn {
+    float: right;
+    width: 50%;
+}
+
+.home_btn .calculate_img {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.home_btn .menuEdit_img {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    width: 80px;
+    height: 80px;
 }

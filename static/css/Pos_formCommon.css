@@ -1,17 +1,17 @@
 #main_container { 
     display: flex;
     justify-content: center;
-    min-width: 600px;
+    min-width: 800px;
 }
 
-.Pos_form { 
+#main_container .Pos_form { 
     width : 800px; 
     height : 500px; 
     display: flex;
 
 }
 
-.menu_left { 
+.Pos_form .menu_left { 
     display: block; 
     width : 75%; 
     min-width: 400px;
@@ -19,9 +19,9 @@
     border : black solid 5px;
 }
 
-.menu_right { 
+.Pos_form .menu_right { 
     display: block;
-    width : 200px;
+    width : 400px;
     height: 100%; 
     border : black solid 5px;
 }
