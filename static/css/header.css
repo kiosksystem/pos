@@ -4,39 +4,33 @@
 }
 
 #header_form_container {
-    width: 65%;
-    min-width: 800px;
+    display: flex;
+    width: 70%;
+    min-width: 700px;
 }
 
 #header_form_container #header_form {
     display: flex;
+    width: 100%;
     justify-content: space-between;
     border: 3px solid black;
 }
 
-#header_form .left_headerMenu {
-    float: left;
-    width: 70%;
-}
-
-.left_headerMenu .home_btn {
-    /*width: 80px;
-    height: 80px;*/
-    margin-top: 10px;
-    margin-left: 10px;
-    float: left;
+#header_form .home_btn {
     width: 20%;
     min-width: 80px;
+    justify-content: center;
 }
 
 .home_btn .home_img {
+    margin-top: 10px;
+    margin-left: 20%;
     width: 80px;
     height: 80px;
 }
 
-.left_headerMenu .now_times {
-    float: left;
-    width: 65%;
+#header_form .now_times {
+    width: 40%;
     margin-top: 30px;
     margin-bottom: 30px;
     margin-right: 10px;
@@ -45,29 +39,27 @@
     border: 3px solid black;
 }
 
-#header_form .right_headerMenu {
-    width: 30%;
-}
-
-.right_headerMenu .home_btn {
-    float: right;
-    width: 50%;
-}
-
 .home_btn .calculate_img {
-    float: right;
     margin-top: 10px;
+    margin-left: 20%;
     margin-right: 10px;
-    margin-top: 10px;
     width: 80px;
     height: 80px;
 }
 
 .home_btn .menuEdit_img {
-    float: right;
     margin-top: 10px;
+    margin-left: 20%;
     margin-right: 10px;
-    margin-top: 10px;
     width: 80px;
     height: 80px;
+}
+
+.home_btn .text{
+    width: 50%;
+    margin-left: 20%;
+    border: none;
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
 }
