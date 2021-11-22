@@ -11,36 +11,37 @@
 <body>
     
     <div id="main_container"> 
-        <div class="Pos_form">
-            
-            <div class="menu_left"> 
-                <div class="table_list">
-                    <button type="button" class="btn" onClick="location.href='#'" >테이블1</button>
-                    <button type="button" class="btn" onClick="location.href='#'" >테이블2</button>
-                    <button type="button" class="btn" onClick="location.href='#'" >테이블3</button>
-                    <button type="button" class="btn" onClick="location.href='#'" >테이블4</button>
-                    <button type="button" class="btn" onClick="location.href='#'" >테이블5</button>
+        <div id="Pos_form_container">
+            <div id="Pos_form">
+                <div class="menu_left"> 
+                    <div class="table_list">
+                        <button type="button" class="btn" onClick="location.href='#'" >테이블1</button>
+                        <button type="button" class="btn" onClick="location.href='#'" >테이블2</button>
+                        <button type="button" class="btn" onClick="location.href='#'" >테이블3</button>
+                        <button type="button" class="btn" onClick="location.href='#'" >테이블4</button>
+                        <button type="button" class="btn" onClick="location.href='#'" >테이블5</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="menu_right">
-                <div class="payment">
+                <div class="menu_right">
                     <div class="payment_top">결제 화면</div>
                     <div class="property">
-                        <div class="name" readonly>상품명</div>
-                        <div class="price" readonly>가격</div>
-                        <div class="num" readonly>수량</div>
-                        <div class="total_price" readonly>합계</div>
-                        <div class="empty" readonly></div>
+                        <div class="name">상품명</div>
+                        <div class="price">가격</div>
+                        <div class="num">수량</div>
+                        <div class="total_price">합계</div>
+                        <div class="empty"></div>
                     </div>
                     <div class="order_list">
-                        <div class="name" id="name">상품명</div>
-                        <div class="price" id="price">가격</div>
-                        <div class="num" id="num">수량</div>
-                        <div class="total_price" id="total_price">합계</div>
-                        <button type="button" class="empty" id="delete_btn" onclick="location.href='#'">삭제</button>
+                        <div class="order_num">
+                            <div class="name" id="name">치킨</div>
+                            <div class="price" id="price">20,000</div>
+                            <div class="num" id="num">2</div>
+                            <div class="total_price" id="total_price">40,000</div>
+                            <button type="button" class="empty" id="delete_btn" onclick="location.href='#'">삭제</button>
+                        </div>
                     </div>
-                    <textarea class="total_amount" placeholder="총액 : " readonly></textarea>
+                    <input class="total_amount" placeholder="총액 : " readonly>
                     <button type="button" class="btn" onClick="location.href='#'" >결제</button>
                     <button type="button" class="btn" onClick="location.href='#'" >추가</button>
                 </div>

@@ -1,28 +1,38 @@
 #main_container { 
     display: flex;
     justify-content: center;
-    min-width: 800px;
 }
 
-#main_container .Pos_form { 
-    width : 800px; 
-    height : 500px; 
+#main_container #Pos_form_container { 
     display: flex;
-
+    width: 70%;
+    min-width: 700px;
+    height : 500px; 
 }
 
-.Pos_form .menu_left { 
+#Pos_form_container #Pos_form {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border : black solid 2px;
+    box-sizing: border-box;
+}
+
+#Pos_form .menu_left { 
     display: block; 
-    width : 75%; 
-    min-width: 400px;
+    width : 30%; 
+    min-width: 300px;
     height: 100%; 
-    border : black solid 5px;
+    border : red solid 2px;
+    box-sizing: border-box;
 }
 
-.Pos_form .menu_right { 
+#Pos_form .menu_right { 
     display: block;
-    width : 400px;
+    width : 70%; 
+    min-width : 400px;
     height: 100%; 
-    border : black solid 5px;
+    border : blue solid 2px;
+    box-sizing: border-box;
 }
 

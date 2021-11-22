@@ -1,20 +1,25 @@
-.menu_selectBtn {
+.menu_left #menu_list {
+	flex-flow: row wrap;
+}
+
+#menu_list .menu_selectBtn {
     width : 100px;
     height : 150px;
     justify-content: center;
 }
 
-#menu_selectBtn .img {
+.menu_selectBtn .img {
+	margin-top: 10px;
+	margin-left: 5px;
 	width: 90px;
 	height: 90px;
-	object-fit: fill;
 }
 
-#menu_selectBtn .menu_name{
+.menu_selectBtn .menu_name{
 
 }
 
-#menu_selectBtn .menu_price{
+.menu_selectBtn .menu_price{
 
 }
 
