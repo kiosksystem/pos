@@ -6,8 +6,8 @@
 #main_container #Pos_form_container { 
     display: flex;
     width: 70%;
-    min-width: 700px;
-    height : 500px; 
+    min-width: 600px;
+    height : 400px; 
 }
 
 #Pos_form_container #Pos_form {
@@ -20,19 +20,23 @@
 
 #Pos_form .menu_left { 
     display: block; 
-    width : 30%; 
-    min-width: 300px;
+    width : 40%; 
+    min-width: 240px;
     height: 100%; 
     border : red solid 2px;
     box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
 }
 
 #Pos_form .menu_right { 
     display: block;
-    width : 70%; 
-    min-width : 400px;
+    width : 60%; 
+    min-width : 360px;
     height: 100%; 
     border : blue solid 2px;
     box-sizing: border-box;
+    overflow: auto;
+    justify-content: center;
 }
 

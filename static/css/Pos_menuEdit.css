@@ -1,0 +1,100 @@
+.menu_left #menu_list {
+	flex-flow: row wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+#menu_list .menu_selectBtn {
+	margin-top: 5px;
+	margin-left: 3px;
+    width : 130px;
+    height : 150px;
+    justify-content: center;
+}
+
+.menu_selectBtn .menu_img {
+	margin-top: 5px;
+	width: 90%;
+	height: 90px;
+}
+
+.menu_selectBtn .text{
+	width: 90%;
+	text-align: center;
+}
+
+.menu_right #menu_edit {
+	
+	width: 100%;
+	height: 100%;
+    justify-content: center;
+}
+
+#menu_edit .btn_list {
+	width: 100%;
+	margin-top: 5px;
+	margin-left: 50%;
+}
+
+.btn_list .reset_btn {
+	width: 15%;
+	background: white;
+	padding: 5px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.btn_list .add_btn {
+	width: 15%;
+	background: green;
+	color: white;
+	padding: 5px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.btn_list .delete_btn {
+	width: 15%;
+	background: red;
+	color: white;
+	padding: 5px;
+	font-weight: bold;
+	text-align: center;
+}
+
+#menu_edit .menu_img {
+	margin-left: 2%;
+    width: 95%;
+    height: 50%;
+}
+#menu_edit .menu_nameTxt{
+	margin-top: 5px;
+	margin-left: 2%;
+	width: 90%;
+	height: 40px;
+	outline: none;
+	font-size: 16px;
+	text-align: center;
+}
+
+#menu_edit .menu_priceTxt{
+	margin-top: 5px;
+	margin-left: 2%;
+	width: 90%;
+	height: 30px;
+	outline: none;
+	font-size: 16px;
+	text-align: center;
+}
+#menu_edit .btn {
+	margin-top: 5px;
+	margin-left: 2%;
+	border-radius: 10px;
+	width: 45%;
+	height: 40px;
+	outline: none;
+	font-size: 16px;
+    background: #e1e1e1;
+	color: #4a6363;
+	font-weight: bold;
+}
