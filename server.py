@@ -3,7 +3,7 @@ from flask import render_template
 
 app = Flask(__name__) # flask name 선언 
 
-@app.route("/", method=['GET', 'POST']) #flask 웹 페이지 경로 
+@app.route("/") #flask 웹 페이지 경로 
 def index(): # 경로에서 실행될 기능 선언 
     return render_template('Pos_main.html')
 

@@ -1,0 +1,136 @@
+.menu_left #menu_list {
+	flex-flow: row wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+#menu_list .menu_selectBtn {
+	margin-top: 5px;
+	margin-left: 3px;
+    width : 130px;
+    height : 150px;
+    justify-content: center;
+}
+
+.menu_selectBtn .menu_img {
+	margin-top: 5px;
+	width: 90%;
+	height: 90px;
+}
+
+.menu_selectBtn .text{
+	width: 90%;
+	text-align: center;
+}
+
+.menu_right .payment_top{
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	font-size: 20px;
+    background: #e1e1e1;
+	color: #4a6363;
+}
+
+.menu_right .property {
+	display: flex;
+	width: 100%;
+	line-height: 30px;
+	float: left;
+	font-weight: bold;
+}
+
+.menu_right .order_list {
+	width: 100%;
+	height: 62%;
+	float: left;
+	font-weight: bold;
+	margin-bottom: 1%;
+}
+
+.order_list .order_num {
+	display: flex;
+	width: 100%;
+	height: 30px;
+	float: left;
+	font-weight: bold;
+}
+
+.menu_right .name {
+	width: 25%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-right : black solid 1px;
+	border-bottom: black solid 1px;
+    box-sizing: border-box;
+	font-weight: bold;
+}
+
+.menu_right .price {
+	width: 25%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-right : black solid 1px;
+	border-bottom: black solid 1px;
+    box-sizing: border-box;
+	font-weight: bold;
+}
+
+.menu_right .num {
+	width: 10%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-right : black solid 1px;
+	border-bottom: black solid 1px;
+    box-sizing: border-box;
+	font-weight: bold;
+}
+
+.menu_right .total_price {
+	width: 25%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-right : black solid 1px;
+	border-bottom: black solid 1px;
+    box-sizing: border-box;
+	font-weight: bold;
+}
+
+.menu_right .empty {
+	width: 15%;
+	height: 30px;
+	text-align: center;	
+}
+
+.order_list #delete_btn {
+	width: 15%;
+	background: red;
+	color: white;
+	padding: 5px;
+	font-weight: bold;
+}
+
+.menu_right .total_amount {
+	line-height: 30px;
+	width: 98%;
+	height: 30px;
+	font-size: 20px;
+	border : black solid 2px;
+	position: sticky
+}
+
+.menu_right .btn {
+	float: left;
+	width: 50%;
+	height: 40px;
+	font-size: 20px;
+    background: #e1e1e1;
+	color: #4a6363;
+	font-weight: bold;
+	position: sticky
+}

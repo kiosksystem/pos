@@ -36,14 +36,6 @@
 	margin-left: 50%;
 }
 
-.btn_list .reset_btn {
-	width: 15%;
-	background: white;
-	padding: 5px;
-	font-weight: bold;
-	text-align: center;
-}
-
 .btn_list .add_btn {
 	width: 15%;
 	background: green;

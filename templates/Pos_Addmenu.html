@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정산 / 매출</title>
+    <link rel="stylesheet" href="../static/css/Pos_formCommon.css">
+    <link rel="stylesheet" href="../static/css/Pos_Addmenu.css">
+</head>
+<body>
+    <div id="main_container"> 
+        <div id="Pos_form_container">
+            <div id="Pos_form">
+                <div class="menu_left">
+                    <div id="menu_list">
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <!-- 칸 이동 테스트용 -->
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <button class="menu_selectBtn">
+                            <img class="menu_img" src="../static/img/food_img.png">
+                            <div><input class="text" readonly value="치킨" disabled></div>
+                            <div><input class="text" readonly value="20,000" disabled></div>
+                        </button>
+                        <!--  -->
+                    </div>
+                </div>
+                <div class="menu_right">
+                    <div class="payment_top">결제 화면</div>
+                    <div class="property">
+                        <div class="name">상품명</div>
+                        <div class="price">가격</div>
+                        <div class="num">수량</div>
+                        <div class="total_price">합계</div>
+                        <div class="empty"></div>
+                    </div>
+                    <div class="order_list">
+                        <div class="order_num">
+                            <div class="name" id="name">치킨</div>
+                            <div class="price" id="price">20,000</div>
+                            <div class="num" id="num">2</div>
+                            <div class="total_price" id="total_price">40,000</div>
+                            <button type="button" class="empty" id="delete_btn">삭제</button>
+                        </div>
+                        <div class="order_num">
+                            <div class="name" id="name">치킨</div>
+                            <div class="price" id="price">20,000</div>
+                            <div class="num" id="num">2</div>
+                            <div class="total_price" id="total_price">40,000</div>
+                            <button type="button" class="empty" id="delete_btn">삭제</button>
+                        </div>
+                    </div>
+                    <input class="total_amount" placeholder="총액 : " readonly>
+                    <button type="button" class="btn">추가</button>
+                    <button type="button" class="btn">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

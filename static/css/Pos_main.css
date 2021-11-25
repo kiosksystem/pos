@@ -43,7 +43,7 @@
 	font-weight: bold;
 }
 
-.menu_right .name {
+.menu_right .menu_name {
 	width: 25%;
 	height: 30px;
 	line-height: 30px;
@@ -54,7 +54,7 @@
 	font-weight: bold;
 }
 
-.menu_right .price {
+.menu_right .menu_price {
 	width: 25%;
 	height: 30px;
 	line-height: 30px;
@@ -65,7 +65,7 @@
 	font-weight: bold;
 }
 
-.menu_right .num {
+.menu_right .menu_num {
 	width: 10%;
 	height: 30px;
 	line-height: 30px;
