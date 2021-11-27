@@ -1,0 +1,136 @@
+.menu_left .calculate_view {
+    flex-flow: row wrap;
+	width: 100%;
+	justify-content: center;
+}
+
+.calculate_view .select_day {
+    width: 100%;
+	line-height: 40px;
+    border: black solid 2px;
+    box-sizing: border-box;
+	font-weight: bold;
+}
+
+.calculate_view .daily_property {
+    width: 100%;
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.calculate_view .daily_sales {
+    width: 100%;
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.calculate_view .table {
+    width: 33%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.calculate_view .price {
+    width: 33%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.calculate_view .time {
+    width: 34%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.calculate_view .empty {
+    width: 20px;
+}
+
+.calculate_view .table_list {
+	flex-flow: row wrap;
+	width: 100%;
+    height: 270px;
+	justify-content: center;
+    border: black solid 2px;
+    box-sizing: border-box;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.table_list .daily_property {
+    width: 100%;
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.calculate_view .total_amount {
+    width: 100%;
+    box-sizing: border-box;
+	line-height: 30px;
+	font-weight: bold;
+    flex-direction: column;
+}
+
+.menu_right .talbe_calculate {
+    
+}
+
+.talbe_calculate .table_number{
+    width: 100%;
+    border: black solid 2px;
+    box-sizing: border-box;
+}
+
+.talbe_calculate .table_property {
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.talbe_calculate .menu_name{
+    width: 33%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+}
+
+.talbe_calculate .menu_price{
+    width: 33%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+}
+
+.talbe_calculate .menu_num{
+    width: 34%;
+    border: gray solid 2px;
+    box-sizing: border-box;
+}
+
+.talbe_calculate .scoll_empty {
+    width: 20px;
+}
+
+.talbe_calculate .table_orderList{
+    width: 100%;
+    border: black solid 2px;
+    box-sizing: border-box;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.table_orderList .table_value {
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.talbe_calculate .total_amount {
+    width: 100%;
+    border: black solid 2px;
+    box-sizing: border-box;
+}
