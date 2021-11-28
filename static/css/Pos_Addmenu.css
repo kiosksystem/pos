@@ -36,93 +36,44 @@
 	color: #4a6363;
 }
 
-.menu_right .property {
+.menu_right .order_list {
 	display: flex;
 	width: 100%;
-	line-height: 30px;
-	float: left;
-	font-weight: bold;
-}
-
-.menu_right .order_list {
-	width: 100%;
-	height: 62%;
-	float: left;
+	height: 68%;
 	font-weight: bold;
 	margin-bottom: 1%;
 	overflow: scroll;
     overflow-x: hidden;
 }
 
-.order_list .order_num {
+.order_list .order_table {
 	display: flex;
 	width: 100%;
 	height: 30px;
-	float: left;
-	font-weight: bold;
 }
 
-.menu_right .name {
-	width: 25%;
+.order_table th {
+	width: 120px;
+}
+
+.order_table tr {
+	width: 100%;
 	height: 30px;
-	line-height: 30px;
+}
+
+td {
 	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
 }
 
-.menu_right .price {
-	width: 25%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .num {
-	width: 10%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .total_price {
-	width: 25%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .empty {
-	width: 15%;
-	height: 30px;
-	text-align: center;	
-}
-
-.menu_right .scoll_empty{
-	width: 20px;
-}
-
-.order_list #delete_btn {
-	width: 15%;
+td #delete_btn {
+	width: 100%;
 	background: red;
 	color: white;
 	padding: 5px;
 	font-weight: bold;
 }
+
+
 
 .menu_right .total_amount {
 	line-height: 30px;
