@@ -59,17 +59,46 @@
                             <button type="button" class="add_btn">추가</button>
                             <button type="button" class="delete_btn">삭제</button>   
                         </div>
-                        <img class="menu_img" src="../static/img/food_img.png">
-                        <div><input class="menu_nameTxt" placeholder="메뉴 이름"></div>
-                        <div><input class="menu_priceTxt" placeholder="메뉴 가격"></div>
-                        <div>
-                            <button type="button" class="btn">저장</button>
-                            <button type="button" class="btn">취소</button>
-                        </div>
+
+                        <form method="POST" action="/menuedit" enctype="multipart/form-data">
+                            <!-- <img class="menu_img" src="../static/img/food_img.png"> -->
+                            <div>
+                                <input name="menu_img" type="file" class="menu_img" id="menu_img">
+                                <canvas id="imagecanvas">
+                                    
+                                </canvas>
+                            </div>
+                            <div><input name="menu_nameTxt" class="menu_nameTxt" placeholder="메뉴 이름"></div>
+                            <div><input name="menu_priceTxt" class="menu_priceTxt" placeholder="메뉴 가격"></div>
+                            <div>
+                                <button type="submit" class="btn">저장</button>
+                                <button type="button" class="btn">취소</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script>
+    var canvas = document.getElementById('imagecanvas');
+    var ctx = canvas.getContext('2d');
+
+    function handleImage(e){
+        var reader = new FileReader();
+        reader.onload = function(event){
+            var img = new Image();
+            img.onload = function(){
+                canvas.width = 300;
+                canvas.height = 300;
+                ctx.drawImage(img, 0, 0, 300, 300);
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(e.target.files[0]);
+    }
+
+</script>
 </html>
