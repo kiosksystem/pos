@@ -16,13 +16,13 @@
     border: 3px solid black;
 }
 
-#header_form .home_btn {
+#header_form .header_btn {
     width: 20%;
     min-width: 80px;
     justify-content: center;
 }
 
-.home_btn .home_img {
+.header_btn .home_img {
     margin-top: 10px;
     margin-left: 20%;
     width: 80px;
@@ -39,7 +39,7 @@
     border: 3px solid black;
 }
 
-.home_btn .calculate_img {
+.header_btn .calculate_img {
     margin-top: 10px;
     margin-left: 20%;
     margin-right: 10px;
@@ -47,7 +47,7 @@
     height: 80px;
 }
 
-.home_btn .menuEdit_img {
+.header_btn .menuEdit_img {
     margin-top: 10px;
     margin-left: 20%;
     margin-right: 10px;
@@ -55,7 +55,7 @@
     height: 80px;
 }
 
-.home_btn .text{
+.header_btn .text{
     width: 55%;
     min-width: 80px;
     margin-left: 20%;
