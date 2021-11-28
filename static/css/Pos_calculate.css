@@ -1,6 +1,7 @@
 .menu_left .calculate_view {
     flex-flow: row wrap;
 	width: 100%;
+    height: 100%;
 	justify-content: center;
 }
 
@@ -14,59 +15,35 @@
 
 .calculate_view .daily_property {
     width: 100%;
+    height: 79%;
     display: flex;
 	line-height: 30px;
 	font-weight: bold;
-}
-
-.calculate_view .daily_sales {
-    width: 100%;
-    display: flex;
-	line-height: 30px;
-	font-weight: bold;
-}
-
-.calculate_view .table {
-    width: 33%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.calculate_view .price {
-    width: 33%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.calculate_view .time {
-    width: 34%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.calculate_view .empty {
-    width: 20px;
-}
-
-.calculate_view .table_list {
-	flex-flow: row wrap;
-	width: 100%;
-    height: 270px;
-	justify-content: center;
-    border: black solid 2px;
-    box-sizing: border-box;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.table_list .daily_property {
+.daily_property th {
+	width: 115px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+.daily_property tr {
+	width: 100%;
+	height: 30px;
+}
+
+.daily_property td {
+	text-align: center;
+}
+
+.calculate_view .daily_sales {
     width: 100%;
-    display: flex;
 	line-height: 30px;
 	font-weight: bold;
+    text-align: center;
 }
 
 .calculate_view .total_amount {
@@ -75,62 +52,57 @@
 	line-height: 30px;
 	font-weight: bold;
     flex-direction: column;
+    font-weight: bold;
 }
 
 .menu_right .talbe_calculate {
-    
+    width: 100%;
+    height: 100%
 }
 
 .talbe_calculate .table_number{
     width: 100%;
     border: black solid 2px;
     box-sizing: border-box;
-}
-
-.talbe_calculate .table_property {
-    display: flex;
-	line-height: 30px;
-	font-weight: bold;
-}
-
-.talbe_calculate .menu_name{
-    width: 33%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-}
-
-.talbe_calculate .menu_price{
-    width: 33%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-}
-
-.talbe_calculate .menu_num{
-    width: 34%;
-    border: gray solid 2px;
-    box-sizing: border-box;
-}
-
-.talbe_calculate .scoll_empty {
-    width: 20px;
+    height: 10%;
+    line-height: 35px;
+    text-align: center;
 }
 
 .talbe_calculate .table_orderList{
+    display: flex;
     width: 100%;
-    border: black solid 2px;
-    box-sizing: border-box;
+    height: 80%;
+    font-weight: bold;
     overflow: scroll;
     overflow-x: hidden;
 }
 
-.table_orderList .table_value {
-    display: flex;
-	line-height: 30px;
-	font-weight: bold;
+.table_orderList .orderlist_table {
+	display: flex;
+	width: 100%;
+	height: 30px;
+}
+
+.orderlist_table th {
+	width: 200px;
+    position: sticky;
+    top: 0px;
+}
+
+.orderlist_table tr {
+	width: 100%;
+	height: 30px;
+}
+
+.orderlist_table td {
+    text-align: center;
 }
 
 .talbe_calculate .total_amount {
     width: 100%;
     border: black solid 2px;
     box-sizing: border-box;
+    height: 35px;
+    font-weight: bold;
 }
