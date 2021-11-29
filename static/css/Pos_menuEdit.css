@@ -56,46 +56,42 @@
 	text-align: center;
 }
 
-#menu_edit .img_show {
-	width: 90%;
-	height: 70%;
-	border : black solid 2px;
-    box-sizing: border-box;
-}
-
 #menu_edit .menu_img {
-	margin-left: 2%;
-    width: 95%;
+	margin-left: 30%;
+    width: 70%;
     height: 50%;
 }
+
+#menu_edit #imagecanvas {
+	margin-left: 5%;
+    width: 90%;
+    height: 211px;
+}
+
 #menu_edit .menu_nameTxt{
-	margin-top: 5px;
-	margin-left: 2%;
-	width: 90%;
-	height: 40px;
-	outline: none;
-	font-size: 16px;
-	text-align: center;
+	line-height: 30px;
+	margin-left: 1px;
+	width: 97%;
+	height: 30px;
+	font-size: 20px;
+	position: sticky
 }
 
 #menu_edit .menu_priceTxt{
-	margin-top: 5px;
-	margin-left: 2%;
-	width: 90%;
+	line-height: 30px;
+	margin-left: 1px;
+	width: 97%;
 	height: 30px;
-	outline: none;
-	font-size: 16px;
-	text-align: center;
+	font-size: 20px;
+	position: sticky
 }
 #menu_edit .btn {
-	margin-top: 5px;
-	margin-left: 2%;
-	border-radius: 10px;
-	width: 45%;
+	float: left;
+	width: 50%;
 	height: 40px;
-	outline: none;
-	font-size: 16px;
+	font-size: 20px;
     background: #e1e1e1;
 	color: #4a6363;
 	font-weight: bold;
+	position: sticky
 }
