@@ -7,7 +7,7 @@
 #menu_list .menu_selectBtn {
 	margin-top: 5px;
 	margin-left: 3px;
-    width : 130px;
+    width : 48%;
     height : 150px;
     justify-content: center;
 }
@@ -24,7 +24,6 @@
 }
 
 .menu_right #menu_edit {
-	
 	width: 100%;
 	height: 100%;
     justify-content: center;
@@ -32,12 +31,14 @@
 
 #menu_edit .btn_list {
 	width: 100%;
+	height: 10%;
 	margin-top: 5px;
-	margin-left: 50%;
+	float: right;
 }
 
 .btn_list .add_btn {
 	width: 15%;
+	height: 100%;
 	background: green;
 	color: white;
 	padding: 5px;
@@ -47,11 +48,19 @@
 
 .btn_list .delete_btn {
 	width: 15%;
+	height: 100%;
 	background: red;
 	color: white;
 	padding: 5px;
 	font-weight: bold;
 	text-align: center;
+}
+
+#menu_edit .img_show {
+	width: 90%;
+	height: 70%;
+	border : black solid 2px;
+    box-sizing: border-box;
 }
 
 #menu_edit .menu_img {

@@ -5,8 +5,7 @@
 
 #main_container #Pos_form_container { 
     display: flex;
-    width: 70%;
-    min-width: 650px;
+    width: 650px;
     height : 400px; 
 }
 
@@ -20,8 +19,7 @@
 
 #Pos_form .menu_left { 
     display: block; 
-    width : 30%; 
-    min-width: 320px;
+    width: 320px;
     height: 100%; 
     border : red solid 2px;
     box-sizing: border-box;
@@ -31,8 +29,7 @@
 
 #Pos_form .menu_right { 
     display: block;
-    width : 70%; 
-    min-width : 330px;
+    width : 330px;
     height: 100%; 
     border : blue solid 2px;
     box-sizing: border-box;
