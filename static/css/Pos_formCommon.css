@@ -21,8 +21,6 @@
     display: block; 
     width: 320px;
     height: 100%; 
-    border : red solid 2px;
-    box-sizing: border-box;
     overflow: auto;
     justify-content: center;
 }
@@ -31,8 +29,6 @@
     display: block;
     width : 330px;
     height: 100%; 
-    border : blue solid 2px;
-    box-sizing: border-box;
     overflow: auto;
     justify-content: center;
 }

@@ -7,15 +7,16 @@
 
 .calculate_view .select_day {
     width: 100%;
-	line-height: 40px;
     border: black solid 2px;
     box-sizing: border-box;
-	font-weight: bold;
+    height: 10%;
+    line-height: 35px;
+    text-align: center;
 }
 
 .calculate_view .daily_property {
     width: 100%;
-    height: 79%;
+    height: 310px;
     display: flex;
 	line-height: 30px;
 	font-weight: bold;
@@ -49,7 +50,7 @@
 .calculate_view .total_amount {
     width: 100%;
     box-sizing: border-box;
-	line-height: 30px;
+	line-height: 40px;
 	font-weight: bold;
     flex-direction: column;
     font-weight: bold;
@@ -72,7 +73,7 @@
 .talbe_calculate .table_orderList{
     display: flex;
     width: 100%;
-    height: 80%;
+    height: 310px;
     font-weight: bold;
     overflow: scroll;
     overflow-x: hidden;
@@ -100,9 +101,8 @@
 }
 
 .talbe_calculate .total_amount {
-    width: 100%;
-    border: black solid 2px;
-    box-sizing: border-box;
-    height: 35px;
+    margin-left: 1px;
+    width: 97%;
+    height: 40px;
     font-weight: bold;
 }

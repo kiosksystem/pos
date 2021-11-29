@@ -14,6 +14,7 @@
         <div id="Pos_form_container">
             <div id="Pos_form">
                 <div class="menu_left">
+
                     <div id="menu_list">
                         <button class="menu_selectBtn">
                             <img class="menu_img" src="../static/img/food_img.png">
@@ -52,16 +53,19 @@
                             <div><input class="text" readonly value="20,000" disabled></div>
                         </button>
                         <!--  -->
+
                     </div>
                 </div>
                 <div class="menu_right">
                     <div id="menu_edit">
+                        
                         <div class="btn_list">
                             <button type="button" class="add_btn">추가</button>
                             <button type="button" class="delete_btn">삭제</button>   
                         </div>
 
                         <form method="POST" action="/menuedit" enctype="multipart/form-data">
+                            
                             <!-- <img class="menu_img" src="../static/img/food_img.png"> -->
                             <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img">
@@ -69,8 +73,11 @@
                                     
                                 </canvas>
                             </div>
+                            
                             <div><input name="menu_nameTxt" class="menu_nameTxt" placeholder="메뉴 이름"></div>
+                            
                             <div><input name="menu_priceTxt" class="menu_priceTxt" placeholder="메뉴 가격"></div>
+                            
                             <div>
                                 <button type="submit" class="btn">저장</button>
                                 <button type="button" class="btn">취소</button>
