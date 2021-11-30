@@ -14,47 +14,17 @@
         <div id="Pos_form_container">
             <div id="Pos_form">
                 <div class="menu_left">
-
-                    <div id="menu_list">
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <!-- 칸 이동 테스트용 -->
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <button class="menu_selectBtn">
-                            <img class="menu_img" src="../static/img/food_img.png">
-                            <div><input class="text" readonly value="치킨" disabled></div>
-                            <div><input class="text" readonly value="20,000" disabled></div>
-                        </button>
-                        <!--  -->
-
+                    <div id="menu_list">   
+                        {% for menu in menulist %}
+                            <button type="submit" class="menu_selectBtn">
+                                <input type="hidden" class="menuid" value="{{ menu[0] }}">
+                                <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
+                                <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
+                                <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
+                            </button>
+                        {% endfor %}
                     </div>
+
                 </div>
                 <div class="menu_right">
                     <div id="menu_edit">
@@ -65,19 +35,14 @@
                         </div>
 
                         <form method="POST" action="/menuedit" enctype="multipart/form-data">
-                            
-                            <!-- <img class="menu_img" src="../static/img/food_img.png"> -->
                             <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img">
                                 <canvas id="imagecanvas">
                                     
                                 </canvas>
-                            </div>
-                            
-                            <div><input name="menu_nameTxt" class="menu_nameTxt" placeholder="메뉴 이름"></div>
-                            
-                            <div><input name="menu_priceTxt" class="menu_priceTxt" placeholder="메뉴 가격"></div>
-                            
+                            </div>                           
+                            <div><input name="menu_nameTxtRight" class="menu_nameTxt"  value="{{ menuname }}" placeholder="메뉴 이름"></div>                            
+                            <div><input name="menu_priceTxtRight" class="menu_priceTxt" value="{{ menuprice }}" placeholder="메뉴 가격"></div>                          
                             <div>
                                 <button type="submit" class="btn">저장</button>
                                 <button type="button" class="btn">취소</button>
@@ -91,22 +56,6 @@
     </div>
 </body>
 <script>
-    var canvas = document.getElementById('imagecanvas');
-    var ctx = canvas.getContext('2d');
-
-    function handleImage(e){
-        var reader = new FileReader();
-        reader.onload = function(event){
-            var img = new Image();
-            img.onload = function(){
-                canvas.width = 300;
-                canvas.height = 300;
-                ctx.drawImage(img, 0, 0, 300, 300);
-            };
-            img.src = event.target.result;
-        };
-        reader.readAsDataURL(e.target.files[0]);
-    }
 
 </script>
 </html>
