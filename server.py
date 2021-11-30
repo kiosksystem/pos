@@ -14,18 +14,23 @@ def main(): # 경로에서 실행될 기능 선언
 
 @app.route('/menuedit', methods=['GET', 'POST'])
 def menuedit():
+    menulist = menuedit_logic.menueditselect()
+    print(menulist)
+    
     if request.method == 'POST':
         menu_info = request.form
-        menuname = menu_info['menu_nameTxt']
-        menuprice = menu_info['menu_priceTxt']
+        menuname = menu_info['menu_nameTxtRight']
+        menuprice = menu_info['menu_priceTxtRight']
 
         menu_img = request.files
         menuimg = menu_img['menu_img']
 
-        menuedit_logic.menuedit(menuname, menuprice, menuimg)
+        menuedit_logic.menueditadd(menuname, menuprice, menuimg)
+        
+        menulist = menuedit_logic.menueditselect()
     
-    return render_template('Pos_menuEdit.html')
-    
+    return render_template('Pos_menuEdit.html', menulist=menulist)
+
 @app.route('/calc')
 def calc():
     return render_template('Pos_calculate.html')
