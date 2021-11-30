@@ -19,82 +19,43 @@
 	color: #4a6363;
 }
 
-.menu_right .property {
-	display: flex;
-	width: 100%;
-	line-height: 30px;
-	float: left;
-	font-weight: bold;
-}
-
 .menu_right .order_list {
 	width: 100%;
-	height: 247px;
+	height: 277px;
 	float: left;
 	font-weight: bold;
 	margin-bottom: 1%;
 }
 
-.order_list .order_num {
-	display: flex;
+.order_list .order_table {
+    width: 100%;
+	height: 100%;
+    display: flex;
+	line-height: 30px;
+	font-weight: bold;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.order_table th {
+	width: 115px;
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+
+.order_table tr {
 	width: 100%;
 	height: 30px;
-	float: left;
-	font-weight: bold;
 }
 
-.menu_right .menu_name {
-	width: 25%;
-	height: 30px;
-	line-height: 30px;
+.order_table td {
+	width: 20%;
 	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
+	border-bottom: black solid 2px;
 }
-
-.menu_right .menu_price {
-	width: 25%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .menu_num {
-	width: 10%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .total_price {
-	width: 25%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border-right : black solid 1px;
-	border-bottom: black solid 1px;
-    box-sizing: border-box;
-	font-weight: bold;
-}
-
-.menu_right .empty {
-	width: 15%;
-	height: 30px;
-	text-align: center;	
-}
-
-.order_list #delete_btn {
-	width: 15%;
+.order_table #delete_btn {
+	width: 100%;
 	background: red;
 	color: white;
 	padding: 5px;
