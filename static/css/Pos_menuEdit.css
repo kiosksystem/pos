@@ -7,9 +7,8 @@
 #menu_list .select_menu {
 	margin-top: 2px;
 	margin-left: 2px;
-    width : 48%;
+    width : 47%;
     height : 180px;
-    justify-content: center;
 	border : black solid 2px;
     box-sizing: border-box;
 }
