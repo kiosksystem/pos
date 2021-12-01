@@ -14,15 +14,45 @@
         <div id="Pos_form_container">
             <div id="Pos_form">
                 <div class="menu_left">
-                    <div id="menu_list">   
-                        {% for menu in menulist %}
-                            <button type="submit" class="menu_selectBtn">
-                                <input type="hidden" class="menuid" value="{{ menu[0] }}">
-                                <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
-                                <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
-                                <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
-                            </button>
-                        {% endfor %}
+                    <div id="menu_list">
+
+                        <div class="select_menu">
+                            <!--{% for menu in menulist %}-->
+                                <div class="menu_inform">                                
+                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
+                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
+                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
+                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
+                                </div>
+                                <button type="submit" class="select_btn" >선택</button>
+                                <button type="button" class="delete_btn" >삭제</button>
+                            <!--{% endfor %}-->
+                        </div>
+                        <div class="select_menu">
+                            <!--{% for menu in menulist %}-->
+                                <div class="menu_inform">                                
+                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
+                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
+                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
+                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
+                                </div>
+                                <button type="submit" class="select_btn" >선택</button>
+                                <button type="button" class="delete_btn" >삭제</button>
+                            <!--{% endfor %}-->
+                        </div>
+                        <div class="select_menu">
+                            <!--{% for menu in menulist %}-->
+                                <div class="menu_inform">                                
+                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
+                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
+                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
+                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
+                                </div>
+                                <button type="submit" class="select_btn" >선택</button>
+                                <button type="button" class="delete_btn" >삭제</button>
+                            <!--{% endfor %}-->
+                        </div>
+
                     </div>
 
                 </div>
@@ -30,15 +60,37 @@
                     <div id="menu_edit">
                         
                         <div class="btn_list">
-                            <button type="button" class="add_btn">추가</button>
-                            <button type="button" class="delete_btn">삭제</button>   
+                            <button type="button" class="add_btn">추가</button>                              
                         </div>
 
                         <form method="POST" action="/menuedit" enctype="multipart/form-data">
                             <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img">
                                 <canvas id="imagecanvas">
-                                    
+                                    <script>
+                                        const canvas = document.querySelector('#jsCanvas');
+                                        const ctx = canvas.getContext('2d');
+                                        const browseBtn = document.querySelector('.browse-btn');
+                                        const realInput = document.querySelector('#real-input');
+
+                                        function readInputFile(e) {
+                                        var file = e.target.files;
+
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            var img = new Image();
+                                            img.onload = function () {
+                                            canvas.width = img.width;
+                                            canvas.height = img.height;
+                                            ctx.drawImage(img, 0, 0);
+                                            };
+                                            img.src = e.target.result;
+                                        };
+                                        reader.readAsDataURL(file[0]);
+                                        }
+
+                                        realInput.addEventListener('change', readInputFile);
+                                    </script>
                                 </canvas>
                             </div>                           
                             <div><input name="menu_nameTxtRight" class="menu_nameTxt"  value="{{ menuname }}" placeholder="메뉴 이름"></div>                            
