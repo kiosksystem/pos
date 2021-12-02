@@ -1,6 +1,8 @@
 import pymysql
 import uuid
 from werkzeug.utils import secure_filename
+import os
+
 db = pymysql.connect(host='localhost', db='kiosk', user='root', password='1234', charset='utf8')
 cursor = db.cursor()
 
@@ -30,6 +32,7 @@ class menueditDao:
         res = cursor.lastrowid
         imgname = str(uuid.uuid4()) + secure_filename(menuimg.filename)
         menuimg.save('static/menuimg/' + imgname)
+        menuimg_files = os.listdir("static/menuimg/")
 
         sql1 = "insert into menu_img (file_name, original_filename, file_url, menu_id) values(%s, %s, %s, %s);"
         cursor.execute(sql1, (imgname, secure_filename(menuimg.filename), 'menuimg/' + secure_filename(menuimg.filename), res))
