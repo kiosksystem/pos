@@ -7,6 +7,7 @@
     <title>메뉴 편집</title>
     <link rel="stylesheet" href="../static/css/Pos_formCommon.css">
     <link rel="stylesheet" href="../static/css/Pos_menuEdit.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
     {% include '/common/header.html' %}
@@ -17,40 +18,18 @@
                     <div id="menu_list">
 
                         <div class="select_menu">
-                            <!--{% for menu in menulist %}-->
-                                <div class="menu_inform">                                
-                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
-                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
-                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
-                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
+                            {% for menu in menuList %}
+                                <div id="menu_inform" class="menu_inform">
+                                    <img class="menu_img" src="../static/menuimg/{{ menu.file_name }}">
+                                    <div><input id="menu_nameTxtLeft" class="text" readonly value="{{ menu.menu_name }}" ></div>
+                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu.menu_price }}" ></div>
                                 </div>
                                 <button type="submit" class="select_btn" >선택</button>
-                                <button type="button" class="delete_btn" >삭제</button>
-                            <!--{% endfor %}-->
-                        </div>
-                        <div class="select_menu">
-                            <!--{% for menu in menulist %}-->
-                                <div class="menu_inform">                                
-                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
-                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
-                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
-                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
-                                </div>
-                                <button type="submit" class="select_btn" >선택</button>
-                                <button type="button" class="delete_btn" >삭제</button>
-                            <!--{% endfor %}-->
-                        </div>
-                        <div class="select_menu">
-                            <!--{% for menu in menulist %}-->
-                                <div class="menu_inform">                                
-                                    <input type="hidden" class="menuid" value="{{ menu[0] }}">
-                                    <img class="menu_img" src="../static/menuimg/{{ menu[4] }}">
-                                    <div><input name="menu_nameTxtLeft" class="text" readonly value="{{ menu[1] }}" ></div>
-                                    <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu[2] }}" ></div>
-                                </div>
-                                <button type="submit" class="select_btn" >선택</button>
-                                <button type="button" class="delete_btn" >삭제</button>
-                            <!--{% endfor %}-->
+                            <form method="POST" action="/menueditdelete">
+                                <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
+                                <button type="submit" id="delete_btn" class="delete_btn">삭제</button>
+                            </form>
+                             {% endfor %}
                         </div>
 
                     </div>
@@ -63,7 +42,7 @@
                             <button type="button" class="add_btn">추가</button>                              
                         </div>
 
-                        <form method="POST" action="/menuedit" enctype="multipart/form-data">
+                        <form method="POST" action="/menueditinsert" enctype="multipart/form-data">
                             <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img">
                                 <canvas id="imagecanvas">
@@ -107,7 +86,4 @@
         </div>
     </div>
 </body>
-<script>
-
-</script>
 </html>

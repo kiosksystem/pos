@@ -1,33 +1,56 @@
 import pymysql
-from flask import request, redirect
-from werkzeug.utils import secure_filename
 import uuid
-
-import os
-
-db = pymysql.connect(host='localhost', user='root', password='1234', db='kiosk', charset='utf8')
+from werkzeug.utils import secure_filename
+db = pymysql.connect(host='localhost', db='kiosk', user='root', password='1234', charset='utf8')
 cursor = db.cursor()
 
-def menueditadd(menuname, menuprice, menuimg):
-    sql = "INSERT INTO menu (menu_name, menu_price) VALUES (%s, %s);"
-    cursor.execute(sql, (menuname, menuprice))
-    db.commit()
-    
-    res = cursor.lastrowid
-    imgname = str(uuid.uuid4()) + secure_filename(menuimg.filename)
-    menuimg.save('static/menuimg/' + imgname)
-    menuimg_files = os.listdir("static/menuimg/")
+class menueditDao:
+    def __init__(self):
+        pass
 
-    sql1 = "INSERT INTO menu_img (file_name, original_filename, file_url, menu_id) VALUES(%s, %s, %s, %s);"
-    cursor.execute(sql1, (imgname, secure_filename(menuimg.filename), 'menuimg/'+secure_filename(menuimg.filename), res))
-    db.commit()
+    def menueditselect(self):
+        ret = []
 
-def menueditselect():
-    sql = "SELECT * FROM menu left join menu_img on menu.menu_id = menu_img.menu_id;"
-    cursor.execute(sql)
+        sql = "select * from menu left join kiosk.menu_img on menu.menu_id = menu_img.menu_id";
+        cursor.execute(sql)
 
-    rows = cursor.fetchall()
-    
-    return rows
+        rows = cursor.fetchall()
+        for e in rows:
+            temp = {'menu_id': e[0], 'menu_name': e[1], 'menu_price': e[2], 'file_name': e[4]}
+            ret.append(temp)
+
+        db.commit()
+        return ret
+
+    def menueditinsert(self, menuname, menuprice, menuimg):
+        sql = "insert into menu (menu_name, menu_price) values(%s,%s)"
+        cursor.execute(sql, (menuname, menuprice))
+        db.commit()
+
+        res = cursor.lastrowid
+        imgname = str(uuid.uuid4()) + secure_filename(menuimg.filename)
+        menuimg.save('static/menuimg/' + imgname)
+
+        sql1 = "insert into menu_img (file_name, original_filename, file_url, menu_id) values(%s, %s, %s, %s);"
+        cursor.execute(sql1, (imgname, secure_filename(menuimg.filename), 'menuimg/' + secure_filename(menuimg.filename), res))
+        db.commit()
+
+    def updEmp(self, empno, name, department, phone):
+        sql = "update emp set name=%s, department=%s, phone=%s where empno=%s"
+        cursor.execute(sql, (name, department, phone, empno))
+        db.commit()
+        db.close()
+
+    def menueditdelete(self, menu_id):
+        print("ddddd", menu_id)
+        sql = "delete from menu where menu_id=%s"
+        cursor.execute(sql, menu_id)
+        db.commit()
 
 
+if __name__ == '__main__':
+    # MyEmpDao().insEmp('aaa', 'bb', 'cc', 'dd')
+    # MyEmpDao().updEmp('aa', 'dd', 'dd', 'aa')
+    menueditDao.menueditdelete('aaa')
+    menuList = menueditDao().menueditselect()
+    # print(emplist)
