@@ -16,9 +16,9 @@
             <div id="Pos_form">
                 <div class="menu_left">
                     <div id="menu_list">
-
-                        <div class="select_menu">
-                            {% for menu in menuList %}
+                        
+                    {% for menu in menuList %}
+                            <div class="select_menu">
                                 <div id="menu_inform" class="menu_inform">
                                     <img class="menu_img" src="../static/menuimg/{{ menu.file_name }}">
                                     <div><input id="menu_nameTxtLeft" class="text" readonly value="{{ menu.menu_name }}" ></div>
@@ -29,8 +29,8 @@
                                 <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
                                 <button type="submit" id="delete_btn" class="delete_btn">삭제</button>
                             </form>
-                             {% endfor %}
                         </div>
+                    {% endfor %}                        
 
                     </div>
 
@@ -44,33 +44,27 @@
 
                         <form method="POST" action="/menueditinsert" enctype="multipart/form-data">
                             <div>
-                                <input name="menu_img" type="file" class="menu_img" id="menu_img">
-                                <canvas id="imagecanvas">
-                                    <script>
-                                        const canvas = document.querySelector('#jsCanvas');
-                                        const ctx = canvas.getContext('2d');
-                                        const browseBtn = document.querySelector('.browse-btn');
-                                        const realInput = document.querySelector('#real-input');
-
-                                        function readInputFile(e) {
-                                        var file = e.target.files;
-
-                                        var reader = new FileReader();
-                                        reader.onload = function (e) {
-                                            var img = new Image();
-                                            img.onload = function () {
-                                            canvas.width = img.width;
-                                            canvas.height = img.height;
-                                            ctx.drawImage(img, 0, 0);
-                                            };
-                                            img.src = e.target.result;
-                                        };
-                                        reader.readAsDataURL(file[0]);
+                                <input name="menu_img" type="file" class="menu_img" id="menu_img" onchange="input_img(this.files)" accept="image/*">
+                                <canvas id="imagecanvas"></canvas>
+                                    <script type="text/javascript">
+                                        function input_img(img_file){
+                                            var file = img_file[0];                                    			
+                                             var reader = new FileReader();
+                                             
+                                             reader.onload = function(e){
+                                                 var img = new Image();
+                                                 img.onload = function(){
+                                                    
+                                                    const canvas = document.getElementById('imagecanvas');
+                                                    const ctx = canvas.getContext('2d');
+                                                     ctx.drawImage(img, 0, 0, 300, 150);
+                                                 }
+                                                 img.src = e.target.result;
+                                             }
+                                             
+                                             reader.readAsDataURL(file);
                                         }
-
-                                        realInput.addEventListener('change', readInputFile);
                                     </script>
-                                </canvas>
                             </div>                           
                             <div><input name="menu_nameTxtRight" class="menu_nameTxt"  value="{{ menuname }}" placeholder="메뉴 이름"></div>                            
                             <div><input name="menu_priceTxtRight" class="menu_priceTxt" value="{{ menuprice }}" placeholder="메뉴 가격"></div>                          
