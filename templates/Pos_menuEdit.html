@@ -24,16 +24,18 @@
                                     <div><input id="menu_nameTxtLeft" class="text" readonly value="{{ menu.menu_name }}" ></div>
                                     <div><input name="menu_priceTxtLeft" class="text" readonly value="{{ menu.menu_price }}" ></div>
                                 </div>
-                                <button type="submit" class="select_btn" >선택</button>
+                            
+                            <form method="POST", action="/menuedit">
+                                <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
+                                <button type="submit" id="select_btn" class="select_btn">선택</button>
+                            </form>
                             <form method="POST" action="/menueditdelete">
                                 <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
                                 <button type="submit" id="delete_btn" class="delete_btn">삭제</button>
                             </form>
-                        </div>
-                    {% endfor %}                        
-
+                            </div>
+                    {% endfor %}                       
                     </div>
-
                 </div>
                 <div class="menu_right">
                     <div id="menu_edit">
@@ -43,34 +45,62 @@
                         </div>
 
                         <form method="POST" action="/menueditinsert" enctype="multipart/form-data">
+                            {% if imsimenulist and imsimenuimg %}   
+                            <div><img class="menu_img" src="../static/menuimg/{{ imsimenuimg[0].file_name }}">
+                                <input name="menu_img" type="file" class="menu_img" id="menu_img" onchange="input_img(this.files)" accept="image/*">
+                                <canvas id="imagecanvas"></canvas>
+                                <script type="text/javascript">
+                                    function input_img(img_file){
+                                        var file = img_file[0];                                    			
+                                         var reader = new FileReader();
+                                         
+                                         reader.onload = function(e){
+                                             var img = new Image();
+                                             img.onload = function(){
+                                                
+                                                const canvas = document.getElementById('imagecanvas');
+                                                const ctx = canvas.getContext('2d');
+                                                 ctx.drawImage(img, 0, 0, 300, 150);
+                                             }
+                                             img.src = e.target.result;
+                                         }
+                                         
+                                         reader.readAsDataURL(file);
+                                    }
+                                </script>
+                            </div>                      
+                            <div><input name="menu_nameTxtRight" id="menu_nameTxt" class="menu_nameTxt"  value="{{ imsimenulist[0].menu_name }}" placeholder="메뉴 이름"></div>                            
+                            <div><input name="menu_priceTxtRight" class="menu_priceTxt" value="{{ imsimenulist[0].menu_price }}" placeholder="메뉴 가격"></div>                          
+                            {% else %}
                             <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img" onchange="input_img(this.files)" accept="image/*">
                                 <canvas id="imagecanvas"></canvas>
-                                    <script type="text/javascript">
-                                        function input_img(img_file){
-                                            var file = img_file[0];                                    			
-                                             var reader = new FileReader();
-                                             
-                                             reader.onload = function(e){
-                                                 var img = new Image();
-                                                 img.onload = function(){
-                                                    
-                                                    const canvas = document.getElementById('imagecanvas');
-                                                    const ctx = canvas.getContext('2d');
-                                                     ctx.drawImage(img, 0, 0, 300, 150);
-                                                 }
-                                                 img.src = e.target.result;
+                                <script type="text/javascript">
+                                    function input_img(img_file){
+                                        var file = img_file[0];                                    			
+                                         var reader = new FileReader();
+                                         
+                                         reader.onload = function(e){
+                                             var img = new Image();
+                                             img.onload = function(){
+                                                
+                                                const canvas = document.getElementById('imagecanvas');
+                                                const ctx = canvas.getContext('2d');
+                                                 ctx.drawImage(img, 0, 0, 300, 150);
                                              }
-                                             
-                                             reader.readAsDataURL(file);
-                                        }
-                                    </script>
-                            </div>                           
-                            <div><input name="menu_nameTxtRight" class="menu_nameTxt"  value="{{ menuname }}" placeholder="메뉴 이름"></div>                            
-                            <div><input name="menu_priceTxtRight" class="menu_priceTxt" value="{{ menuprice }}" placeholder="메뉴 가격"></div>                          
+                                             img.src = e.target.result;
+                                         }
+                                         
+                                         reader.readAsDataURL(file);
+                                    }
+                                </script>
+                            </div>
+                            <div><input name="menu_nameTxtRight" id="menu_nameTxt" class="menu_nameTxt"  value="" placeholder="메뉴 이름"></div>                            
+                            <div><input name="menu_priceTxtRight" class="menu_priceTxt" value="" placeholder="메뉴 가격"></div> 
+                            {% endif %}
                             <div>
-                                <button type="submit" class="btn">저장</button>
-                                <button type="button" class="btn">취소</button>
+                                <button type="submit" id="savebtn" class="btn">저장</button>
+                                <button type="button" id="canclebtn" class="btn">취소</button>
                             </div>
                         </form>
 
