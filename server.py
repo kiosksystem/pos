@@ -1,3 +1,4 @@
+from flask.helpers import url_for
 import pymysql
 from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
@@ -15,6 +16,14 @@ def main(): # 경로에서 실행될 기능 선언
 @app.route('/menuedit', methods=['GET', 'POST'])
 def menuedit():
     menuList = menueditDao().menueditselect()
+
+    if request.method == 'POST':
+        menu_info = request.form
+        menuimsilist = list(menu_info.values())
+        imsimenulist = menueditDao().menueditimsiselect(menuimsilist)
+        imsimenuimg = menueditDao().menueditimsi_imgselect(menuimsilist)
+
+        return render_template('Pos_menuEdit.html', menuList=menuList, imsimenulist=imsimenulist, imsimenuimg=imsimenuimg)
 
     return render_template('Pos_menuEdit.html', menuList=menuList)
 
