@@ -27,7 +27,7 @@
                             
                             <form method="POST", action="/menuedit">
                                 <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
-                                <button type="submit" id="select_btn" class="select_btn">선택</button>
+                                <button type="submit" id="select_btn" class="select_btn" onclick="input_img()">선택</button>
                             </form>
                             <form method="POST" action="/menueditdelete">
                                 <input type="hidden" name="menuid" id="menuid" class="menuid" value="{{ menu.menu_id }}">
@@ -46,10 +46,20 @@
 
                         <form method="POST" action="/menueditinsert" enctype="multipart/form-data">
                             {% if imsimenulist and imsimenuimg %}   
-                            <div><img class="menu_img" src="../static/menuimg/{{ imsimenuimg[0].file_name }}">
+                            <div>
                                 <input name="menu_img" type="file" class="menu_img" id="menu_img" onchange="input_img(this.files)" accept="image/*">
                                 <canvas id="imagecanvas"></canvas>
                                 <script type="text/javascript">
+                                    //menulist에서 선택한 이미지 넣기
+                                    var img = new Image();
+                                    img.onload = function(){                                    
+                                    const canvas = document.getElementById('imagecanvas');
+                                    const ctx = canvas.getContext('2d');
+                                        ctx.drawImage(img, 0, 0, 300, 150);
+                                    }
+                                    img.src = "../static/menuimg/{{ imsimenuimg[0].file_name }}";
+
+                                    //새로 선택한 이미지 넣기
                                     function input_img(img_file){
                                         var file = img_file[0];                                    			
                                          var reader = new FileReader();
