@@ -1,4 +1,21 @@
-.menu_left .table_list .btn {
+.menu_left .table_list{
+	width: 100%;
+	height: 90%;
+	overflow: scroll;
+    overflow-x: hidden;
+}
+
+.menu_left .table_btn{
+	width: 100%;
+	height: 10%;
+	font-size: 20px;
+    background: #e1e1e1;
+	color: #4a6363;
+	font-weight: bold;
+	position: sticky
+}
+
+.table_list .btn {
 	border-radius: 10px;
 	width: 100%;
 	height: 80px;
