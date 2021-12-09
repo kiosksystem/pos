@@ -3,15 +3,26 @@ import pymysql
 from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
 from menuedit_logic import menueditDao
+from main_logic import mainDao
 
-app = Flask(__name__) # flask name 선언 
+app = Flask(__name__) 
 
 db = pymysql.connect(host='localhost', user='root', password='1234', db='kiosk', charset='utf8')
 cursor = db.cursor()
 
-@app.route("/") #flask 웹 페이지 경로 
-def main(): # 경로에서 실행될 기능 선언 
-    return render_template('Pos_main.html')
+@app.route("/")
+def main(): 
+    tableList = mainDao().tableselect()
+
+    return render_template('Pos_main.html', tableList=tableList)
+
+@app.route("/addTable", methods=['GET', 'POST'])
+def addTable():
+    tablename = "table"
+    mainDao().tableinsert(tablename)
+    
+    return redirect("/")
+
 
 @app.route('/menuedit', methods=['GET', 'POST'])
 def menuedit():
