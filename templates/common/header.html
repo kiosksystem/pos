@@ -10,7 +10,25 @@
                     <input class="text" placeholder="메인 화면" disabled>
                 </div>
                 
-                <div class="now_times">2021년 11월 26일</div>
+                <div class="now_times">
+                    <span id="now_date"></span>
+                </div>
+                <script>
+                    var Target = document.getElementById("now_date");
+                    function clock() {
+                        var time = new Date();
+                        var year = time.getFullYear();
+                        var month = time.getMonth() + 1; //getMonth는 0~11까지의 값을 반환
+                        var day = time.getDate();
+                        var hours = time.getHours();
+                        var minutes = time.getMinutes();
+            
+                        Target.innerText = 
+                        `${year}년 ${month}월 ${day}일 ${hours < 10 ? `0${hours}` : hours} : ${minutes < 10 ? `0${minutes}` : minutes}`;
+                    }
+                    clock();
+                    setInterval(clock, 1000); // 1초마다 실행
+                </script>
                 
                 <div class="header_btn">
                     <a href="/calc"><img class="calculate_img" src="../../static/img/Sales_icon.png"></a>

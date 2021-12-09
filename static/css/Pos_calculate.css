@@ -14,6 +14,21 @@
     text-align: center;
 }
 
+.select_day .select_date {
+    
+}
+
+.select_day .date_btn {
+    float: right;
+	width: 20%;
+	height: 100%;
+	font-size: 16px;
+    background: #e1e1e1;
+	color: #4a6363;
+	font-weight: bold;
+	justify-content: center;
+}
+
 .calculate_view .daily_property {
     width: 100%;
     height: 310px;
