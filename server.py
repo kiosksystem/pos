@@ -10,11 +10,30 @@ app = Flask(__name__)
 db = pymysql.connect(host='localhost', user='root', password='1234', db='kiosk', charset='utf8')
 cursor = db.cursor()
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def main(): 
     tableList = mainDao().tableselect()
+    orderList = []
+    ordercalc = []
 
-    return render_template('Pos_main.html', tableList=tableList)
+    if request.method == 'POST':
+        menu_info = request.form
+        gettableinfo = list(menu_info.values())
+        strtableinfo = "".join(gettableinfo)
+        table_id = strtableinfo.split("-")
+
+        orderList = mainDao().orderselect(table_id[1])
+
+        for i in orderList:
+            menucalc = i['menu_price']
+            countcalc = i['count']
+            
+            ordercalc.append(menucalc * countcalc)
+
+        print(orderList)
+        print(ordercalc)
+
+    return render_template('Pos_main.html', tableList=tableList, orderList=orderList)
 
 @app.route("/addTable", methods=['GET', 'POST'])
 def addTable():
