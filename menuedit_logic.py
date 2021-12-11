@@ -66,11 +66,11 @@ class menueditDao:
         cursor.execute(sql1, (imgname, secure_filename(menuimg.filename), 'menuimg/' + secure_filename(menuimg.filename), res))
         db.commit()
 
-    def updEmp(self, empno, name, department, phone):
-        sql = "update emp set name=%s, department=%s, phone=%s where empno=%s"
-        cursor.execute(sql, (name, department, phone, empno))
-        db.commit()
-        db.close()
+    # def updEmp(self, empno, name, department, phone):
+    #     sql = "update emp set name=%s, department=%s, phone=%s where empno=%s"
+    #     cursor.execute(sql, (name, department, phone, empno))
+    #     db.commit()
+    #     db.close()
 
     def menueditdelete(self, menu_id):
         print("ddddd", menu_id)

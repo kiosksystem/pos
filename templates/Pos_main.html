@@ -16,7 +16,9 @@
                 <div class="menu_left"> 
                     <div class="table_list">
                       {% for table in tableList %}
-                        <button type="button" class="btn" onClick="location.href='#'" >{{table.table_name }}{{ table.table_id }}</button>
+                      <form method="POST" action="/">
+                        <input type="submit" name="table_id" class="btn" value="{{table.table_name }}-{{ table.table_id }}">
+                      </form>
                       {% endfor %}
                     </div>
                     <form method="POST" action="/addTable">
@@ -36,83 +38,21 @@
                                     <th class="total_price">합계</th>
                                     <th class="empty"></th>
                     		    </tr>
+                            {% if orderList %}
+                            {% for orderList in orderList %}
                     		    <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
+                            		<td class="menu_name" id="menu_name">{{ orderList.menu_name }}</td>
+                            		<td class="menu_price" id="menu_price">{{ orderList.menu_price }}</td>
+                            		<td class="menu_num" id="menu_num">{{ orderList.count }}</td>
                             		<td class="total_price" id="total_price">40,000</td>
                             		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
-                                <tr>
-                            		<td class="menu_name" id="menu_name">치킨</td>
-                            		<td class="menu_price" id="menu_price">20,000</td>
-                            		<td class="menu_num" id="menu_num">2</td>
-                            		<td class="total_price" id="total_price">40,000</td>
-                            		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
-                                </tr>
+                              </tr>
+                            {% endfor %}
+                            {% else %}
+                              <tr>
+                            		<td class="menu_name" id="menu_name">없어 임마</td>
+                              </tr>
+                            {% endif %}
                             </tbody>
                         </table>
                     </div>
