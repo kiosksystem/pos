@@ -24,15 +24,6 @@ def main():
 
         orderList = mainDao().orderselect(table_id[1])
 
-        for i in orderList:
-            menucalc = i['menu_price']
-            countcalc = i['count']
-            
-            ordercalc.append(menucalc * countcalc)
-
-        print(orderList)
-        print(ordercalc)
-
     return render_template('Pos_main.html', tableList=tableList, orderList=orderList)
 
 @app.route("/addTable", methods=['GET', 'POST'])

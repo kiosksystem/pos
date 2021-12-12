@@ -44,7 +44,7 @@
                             		<td class="menu_name" id="menu_name">{{ orderList.menu_name }}</td>
                             		<td class="menu_price" id="menu_price">{{ orderList.menu_price }}</td>
                             		<td class="menu_num" id="menu_num">{{ orderList.count }}</td>
-                            		<td class="total_price" id="total_price">40,000</td>
+                            		<td class="total_price" id="total_price">{{ orderList.result }}</td>
                             		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
                               </tr>
                             {% endfor %}
