@@ -1,20 +1,17 @@
-from flask.helpers import url_for
-import pymysql
 from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
 from menuedit_logic import menueditDao
 from main_logic import mainDao
+from datetime import datetime
 
 app = Flask(__name__) 
-
-db = pymysql.connect(host='localhost', user='root', password='1234', db='kiosk', charset='utf8')
-cursor = db.cursor()
 
 @app.route("/", methods=['GET', 'POST'])
 def main(): 
     tableList = mainDao().tableselect()
     orderList = []
-    ordercalc = []
+    totalprice = 0
+    now_table_id = ""
 
     if request.method == 'POST':
         menu_info = request.form
@@ -24,7 +21,31 @@ def main():
 
         orderList = mainDao().orderselect(table_id[1])
 
-    return render_template('Pos_main.html', tableList=tableList, orderList=orderList)
+        for i in range (0, len(orderList)):
+            totalprice = totalprice + orderList[i]['result']
+
+        now_table_id = menu_info['now_table_id']
+
+    return render_template('Pos_main.html', tableList=tableList, orderList=orderList, totalprice=totalprice, now_table_id=now_table_id)
+
+@app.route("/finalresult", methods=['GET', 'POST'])
+def finalresult():
+    if request.method == 'POST':
+        menu_info = request.form
+        now = datetime.now()
+        current_time = now.strftime('%y-%m-%d %H:%M:%S')
+
+        now_table_id = menu_info['now_table_id']
+        strtableinfo = "".join(now_table_id)
+        table_id = strtableinfo.split("-")
+        orderList = mainDao().orderselect(table_id[1])
+
+        print(orderList.values())
+
+
+        # mainDao().addTotal_calc(current_time, orderList)
+
+    return redirect("/")
 
 @app.route("/addTable", methods=['GET', 'POST'])
 def addTable():

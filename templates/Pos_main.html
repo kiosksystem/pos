@@ -17,7 +17,7 @@
                     <div class="table_list">
                       {% for table in tableList %}
                       <form method="POST" action="/">
-                        <input type="submit" name="table_id" class="btn" value="{{table.table_name }}-{{ table.table_id }}">
+                        <input type="submit" name="now_table_id" class="btn" value="{{table.table_name }}-{{ table.table_id }}">
                       </form>
                       {% endfor %}
                     </div>
@@ -57,9 +57,12 @@
                         </table>
                     </div>
                     
-                    <input class="total_amount" placeholder="총액 : " readonly>
-                    
-                    <button type="button" class="btn">결제</button>
+                    <input class="total_amount" placeholder="총액 : " readonly value="{{ totalprice }}", palceholder="총액">
+
+                    <form method="POST" action="/finalresult">
+                      <input type="hidden" name="now_table_id" class="btn" value="{{ now_table_id }}">
+                      <button type="submit" class="btn">결제</button>
+                    </form>
                     <button type="button" class="btn">추가</button>
                 </div>
             </div>

@@ -30,7 +30,7 @@ class mainDao:
     def orderselect(self, table_id):
         ret = []
 
-        sql = "SELECT order_id, table_id,menu_name,menu_price, sum(count) as count, menu_price*count as result FROM kioskorder where table_id=%s group by menu_name;"
+        sql = "select order_id, table_id,menu_name,menu_price, sum(count) as count, menu_price*count as result FROM kioskorder where table_id=%s group by menu_name;"
         cursor.execute(sql, table_id)
 
         rows = cursor.fetchall()
@@ -40,3 +40,20 @@ class mainDao:
 
         db.commit()
         return ret
+
+    def addTotal_calc(self, current_time, orderList):
+        sql = "insert into total_calc(time) values(%s);"
+        cursor.execute(sql, current_time)
+        db.commit()
+
+        res = cursor.lastrowid
+
+        for i in range (0, len(orderList)):
+            orderList[i]['calc_id'] = res
+
+        for i in range (0, len(orderList)):
+            del orderList[i]['order_id']
+
+        sql1 = "insert into ex(table_id, menu_name, menu_price, count, result, calc_id) values (%s, %s, %s, %s, %s, %s);"
+        cursor.executemany(sql1, orderList)
+        db.commit()
