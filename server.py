@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from werkzeug.utils import secure_filename
 from menuedit_logic import menueditDao
 from main_logic import mainDao
+from calc_logic import calcDao
 from datetime import datetime
 
 app = Flask(__name__) 
@@ -30,6 +31,8 @@ def main():
 
 @app.route("/finalresult", methods=['GET', 'POST'])
 def finalresult():
+    totalprice = 0
+
     if request.method == 'POST':
         menu_info = request.form
         now = datetime.now()
@@ -40,10 +43,34 @@ def finalresult():
         table_id = strtableinfo.split("-")
         orderList = mainDao().orderselect(table_id[1])
 
-        print(orderList.values())
+        print(current_time)
+        print(table_id[1])
+        print(orderList)
 
 
-        # mainDao().addTotal_calc(current_time, orderList)
+        for i in range (0, len(orderList)):
+            totalprice = totalprice + orderList[i]['result']
+
+        print(totalprice)
+
+        calc_id = mainDao().addTotal_calc(current_time, table_id[1], totalprice)
+
+        print(calc_id)
+
+        for i in range (0, len(orderList)):
+            orderList[i]['calc_id'] = calc_id
+
+        for i in range (0, len(orderList)):
+            del orderList[i]['order_id']
+
+        for i in range(0, len(orderList)):
+            d1 = list(dict(orderList[i]).values())
+            print(d1)
+            t1 = tuple(d1)
+            mainDao().addTotal_detail(t1)
+
+
+
 
     return redirect("/")
 
@@ -94,9 +121,21 @@ def menueditdelete():
 
     return redirect('/menuedit')
 
-@app.route('/calc')
+@app.route('/calc', methods=['GET', 'POST'])
 def calc():
-    return render_template('Pos_calculate.html')
+    total_calc = calcDao().total_calc()
+    total_detail = []
+
+    if request.method == 'POST':
+        menu_info = request.form
+        calc_id = menu_info['calc_id']
+        
+        total_detail = calcDao().total_detail(calc_id)
+        print(total_detail)
+
+
+    return render_template('Pos_calculate.html', total_calc=total_calc, total_detail=total_detail)
+    
 
 @app.route("/addmenu")
 def addmenu():

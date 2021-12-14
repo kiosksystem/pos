@@ -41,19 +41,16 @@ class mainDao:
         db.commit()
         return ret
 
-    def addTotal_calc(self, current_time, orderList):
-        sql = "insert into total_calc(time) values(%s);"
-        cursor.execute(sql, current_time)
+    def addTotal_calc(self, current_time, table_id, totalprice):
+        sql = "insert into total_calc(time, total_result, table_id) values(%s, %s, %s);"
+        cursor.execute(sql, (current_time, totalprice, table_id))
         db.commit()
 
         res = cursor.lastrowid
 
-        for i in range (0, len(orderList)):
-            orderList[i]['calc_id'] = res
+        return res
 
-        for i in range (0, len(orderList)):
-            del orderList[i]['order_id']
-
-        sql1 = "insert into ex(table_id, menu_name, menu_price, count, result, calc_id) values (%s, %s, %s, %s, %s, %s);"
-        cursor.executemany(sql1, orderList)
+    def addTotal_detail(self, t1):
+        sql = "insert into total_detail(table_id, menu_name, menu_price, count, result, calc_id) values(%s,%s,%s,%s,%s,%s);"
+        cursor.execute(sql, t1)
         db.commit()
