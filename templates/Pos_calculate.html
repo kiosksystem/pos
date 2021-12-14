@@ -32,66 +32,18 @@
                                     <th class="time">시간</th>
                                     <th class="empty"></td>
                                 </tr>
+                                {% for total_calc in total_calc %}
                                 <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
+                                    <td class="table" id="table_num">{{ total_calc.table_id }}</td>
+                                    <td class="price" id="total_amount">{{ total_calc.total_result }}</td>
+                                    <td class="time" id="sales_time">{{ total_calc.time }}</td>
+                                    
+                                    <form method="POST" action="calc">
+                                        <input type="hidden" name="calc_id" value="{{ total_calc.calc_id }}">
+                                        <td><input type="submit" class="daily_sales" value="보기"></td>
+                                    </form>
                                 </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
-                                <tr>
-                                    <td class="table" id="table_num">1</td>
-                                    <td class="price" id="total_amount">20000</td>
-                                    <td class="time" id="sales_time">21.11.26</td>  
-                                    <td><input type="button" class="daily_sales" value="보기"></td>
-                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                         <div><input class="total_amount" placeholder="총 매출"></div>
@@ -108,96 +60,17 @@
                                         <th class="menu_price">메뉴 가격</th>
                                         <th class="menu_num">수량</th>
                                     </tr>
+                                    {% if total_detail %}
+                                    {% for total_detail in total_detail %}
                                     <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
+                                        <td class="menu_name" id="menu_name">{{ total_detail.menu_name }}</td>
+                                        <td class="menu_price" id="menu_price">{{ total_detail.menu_price }}</td>
+                                        <td class="menu_num" id="menu_num">{{ total_detail.count }}</td>                        
                                     </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
-                                    <tr>
-                                        <td class="menu_name" id="menu_name">치킨</td>
-                                        <td class="menu_price" id="menu_price">20000</td>
-                                        <td class="menu_num" id="menu_num">2</td>                        
-                                    </tr>
+                                    {% endfor %}
+                                    {% else %}
+                                    <div>없음</div>
+                                    {% endif %}
                                 </tbody>
                             </table>
                         </div>
