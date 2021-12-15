@@ -16,9 +16,13 @@ def main():
 
     if request.method == 'POST':
         menu_info = request.form
+        print("server")
+        print(menu_info)
         gettableinfo = list(menu_info.values())
         strtableinfo = "".join(gettableinfo)
         table_id = strtableinfo.split("-")
+        print("server table")
+        print(table_id)
 
         orderList = mainDao().orderselect(table_id[1])
 

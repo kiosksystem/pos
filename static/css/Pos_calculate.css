@@ -31,7 +31,7 @@
 
 .calculate_view .daily_property {
     width: 100%;
-    height: 310px;
+    height: 90%;
     display: flex;
 	line-height: 30px;
 	font-weight: bold;
@@ -40,10 +40,27 @@
 }
 
 .daily_property th {
-	width: 95px;
+    table-layout: fixed;
+	width: 30px;
     position: sticky;
     top: 0px;
     background-color: white;
+}
+
+.table {
+    width: 60px;
+}
+
+.price {
+    width: 60px;
+}
+
+.time {
+    width: 160px;
+}
+
+.empty {
+    width: 38px;
 }
 
 .daily_property tr {
@@ -60,15 +77,6 @@
 	line-height: 30px;
 	font-weight: bold;
     text-align: center;
-}
-
-.calculate_view .total_amount {
-    width: 100%;
-    box-sizing: border-box;
-	line-height: 40px;
-	font-weight: bold;
-    flex-direction: column;
-    font-weight: bold;
 }
 
 .menu_right .talbe_calculate {
@@ -88,7 +96,7 @@
 .talbe_calculate .table_orderList{
     display: flex;
     width: 100%;
-    height: 310px;
+    height: 90%;
     font-weight: bold;
     overflow: scroll;
     overflow-x: hidden;
@@ -113,11 +121,4 @@
 
 .orderlist_table td {
     text-align: center;
-}
-
-.talbe_calculate .total_amount {
-    margin-left: 1px;
-    width: 97%;
-    height: 40px;
-    font-weight: bold;
 }

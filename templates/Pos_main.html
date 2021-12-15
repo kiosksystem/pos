@@ -31,28 +31,29 @@
                     <div class="order_list">
                         <table class="order_table">
                             <tbody>
-			                    <tr>
+                              {% if orderList %}
+			                        <tr>
                                     <th class="menu_name">상품명</th>
                                     <th class="menu_price">가격</th>
                                     <th class="menu_num">수</th>
                                     <th class="total_price">합계</th>
                                     <th class="empty"></th>
-                    		    </tr>
-                            {% if orderList %}
-                            {% for orderList in orderList %}
-                    		    <tr>
+                    		      </tr>
+                            
+                              {% for orderList in orderList %}
+                    		      <tr>
                             		<td class="menu_name" id="menu_name">{{ orderList.menu_name }}</td>
                             		<td class="menu_price" id="menu_price">{{ orderList.menu_price }}</td>
                             		<td class="menu_num" id="menu_num">{{ orderList.count }}</td>
                             		<td class="total_price" id="total_price">{{ orderList.result }}</td>
                             		<td><input type="button" class="empty" id="delete_btn" value="삭제"></td>
                               </tr>
-                            {% endfor %}
-                            {% else %}
-                              <tr>
-                            		<td class="menu_name" id="menu_name">없어 임마</td>
-                              </tr>
-                            {% endif %}
+                              {% endfor %}
+                              {% else %}
+                                <tr>
+                                  <th><div class="menu_name" id="menu_name">주문 없음</div></th>
+                                </tr>
+                              {% endif %}
                             </tbody>
                         </table>
                     </div>
