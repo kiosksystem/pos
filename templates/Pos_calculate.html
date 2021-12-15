@@ -29,7 +29,7 @@
                                 <tr>
                                     <th class="table">테이블 번호</th>
                                     <th class="price">총 액</th>
-                                    <th class="time">시간</th>
+                                    <th class="time">시 간</th>
                                     <th class="empty"></td>
                                 </tr>
                                 {% for total_calc in total_calc %}
@@ -46,7 +46,6 @@
                                 {% endfor %}
                             </tbody>
                         </table>
-                        <div><input class="total_amount" placeholder="총 매출"></div>
                    </div>
                 </div>
                 <div class="menu_right">
@@ -55,12 +54,12 @@
                         <div class="table_orderList">
                             <table class="orderlist_table">
                                 <tbody>
+                                    {% if total_detail %}
                                     <tr>
                                         <th class="menu_name">상품명</th>
                                         <th class="menu_price">메뉴 가격</th>
                                         <th class="menu_num">수량</th>
-                                    </tr>
-                                    {% if total_detail %}
+                                    </tr>                                    
                                     {% for total_detail in total_detail %}
                                     <tr>
                                         <td class="menu_name" id="menu_name">{{ total_detail.menu_name }}</td>
@@ -69,12 +68,13 @@
                                     </tr>
                                     {% endfor %}
                                     {% else %}
-                                    <div>없음</div>
+                                    <tr>
+                                        <td>결제 내역 없음</td>
+                                    </tr>
                                     {% endif %}
                                 </tbody>
                             </table>
                         </div>
-                        <div><input class="total_amount" placeholder="총액"></div>
                     </div>
                 </div>
             </div>

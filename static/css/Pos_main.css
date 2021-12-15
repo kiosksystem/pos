@@ -7,7 +7,7 @@
 
 .menu_left .table_btn{
 	width: 100%;
-	height: 10%;
+	height: 39px;
 	font-size: 20px;
     background: #e1e1e1;
 	color: #4a6363;
@@ -71,6 +71,7 @@
 	text-align: center;
 	border-bottom: black solid 2px;
 }
+
 .order_table #delete_btn {
 	width: 100%;
 	background: red;
@@ -91,7 +92,7 @@
 .menu_right .btn {
 	float: left;
 	width: 50%;
-	height: 40px;
+	height: 39px;
 	font-size: 20px;
     background: #e1e1e1;
 	color: #4a6363;
